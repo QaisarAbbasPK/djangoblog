@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Delete</th>
+        <th>Edit</th>
+        <th>Create</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+    {% for data in post %}
+      <tr>
+        <td>{{ data.fname }}</td>
+        <td>{{ data.lname }}</td>
+        <td>{{ data.phone }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.address }}</td>
+        <td><a href="/delete/{{ data.id }}">Delete</a></td>
+        <td><a href="/edit/{{ data.id }}">Edit</a></td>
+        <td><a href="http://127.0.0.1:8000/">Create</a></td>
+      
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
